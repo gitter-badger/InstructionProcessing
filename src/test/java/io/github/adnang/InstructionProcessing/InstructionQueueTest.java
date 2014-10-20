@@ -1,10 +1,13 @@
 package io.github.adnang.InstructionProcessing;
 
+import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
 public class InstructionQueueTest{
+
+    final InstructionQueue instructionQueue = new InstructionQueue();
 
     //valid and invalid message values
     final int
@@ -23,7 +26,6 @@ public class InstructionQueueTest{
     @Test
     public void test_addInstruction_creates_queue_entry() throws Exception {
 
-        InstructionQueue instructionQueue = new InstructionQueue();
         instructionQueue.addInstruction(
                 VAL_INSTRUCTION_TYPE,
                 VAL_PRODUCT_CODE,
@@ -37,5 +39,12 @@ public class InstructionQueueTest{
     @Test(expected=InvalidMessageException.class)
     public void test_addInstruction_with_invalid_type_throws_inv_msg_exception() throws Exception {
 
+        instructionQueue.addInstruction(
+                INV_INSTRUCTION_TYPE,
+                VAL_PRODUCT_CODE,
+                VAL_QUANTITY,
+                VAL_UOM,
+                VAL_TIME_STAMP
+        );
     }
 }
