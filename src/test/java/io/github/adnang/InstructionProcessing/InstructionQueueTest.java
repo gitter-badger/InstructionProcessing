@@ -121,4 +121,63 @@ public class InstructionQueueTest{
         );
     }
 
+    /**
+     * Tests comparator of message queue works by adding a higher priority message after lower priority message and
+     * checking their locations.
+     *
+     * @throws Exception
+     */
+    @Test
+    public void test_high_priority_message_moves_ahead_of_low_in_queue() throws Exception {
+        final int HIGH_PRIORITY_TYPE = 1, LOW_PRIORITY_TYPE = 91;
+        InstructionMessage high = new InstructionMessage(HIGH_PRIORITY_TYPE,
+                VAL_PRODUCT_CODE, VAL_QUANTITY, VAL_UOM, VAL_TIME_STAMP);
+
+        InstructionMessage low = new InstructionMessage(LOW_PRIORITY_TYPE,
+                VAL_PRODUCT_CODE, VAL_QUANTITY, VAL_UOM, VAL_TIME_STAMP);
+
+        instructionQueue.add(low);
+        instructionQueue.add(high);
+
+        assertEquals(high, instructionQueue.peek());
+    }
+
+    /**
+     * As above but with medium priority message ahead of low priority.
+     *
+     * @throws Exception
+     */
+    @Test
+    public void test_medium_priority_message_moves_ahead_of_low_in_queue() throws Exception {
+        final int MED_PRIORITY_TYPE = 12, LOW_PRIORITY_TYPE = 91;
+        InstructionMessage med = new InstructionMessage(MED_PRIORITY_TYPE,
+                VAL_PRODUCT_CODE, VAL_QUANTITY, VAL_UOM, VAL_TIME_STAMP);
+
+        InstructionMessage low = new InstructionMessage(LOW_PRIORITY_TYPE,
+                VAL_PRODUCT_CODE, VAL_QUANTITY, VAL_UOM, VAL_TIME_STAMP);
+
+        instructionQueue.add(low);
+        instructionQueue.add(med);
+
+        assertEquals(med, instructionQueue.peek());
+    }
+    /**
+     * As above but with high priority message ahead of medium priority.
+     *
+     * @throws Exception
+     */
+    @Test
+    public void test_high_priority_message_moves_ahead_of_medium_in_queue() throws Exception {
+        final int HIGH_PRIORITY_TYPE = 1, MED_PRIORITY_TYPE = 12;
+        InstructionMessage high = new InstructionMessage(HIGH_PRIORITY_TYPE,
+                VAL_PRODUCT_CODE, VAL_QUANTITY, VAL_UOM, VAL_TIME_STAMP);
+
+        InstructionMessage med = new InstructionMessage(MED_PRIORITY_TYPE,
+                VAL_PRODUCT_CODE, VAL_QUANTITY, VAL_UOM, VAL_TIME_STAMP);
+
+        instructionQueue.add(med);
+        instructionQueue.add(high);
+
+        assertEquals(high, instructionQueue.peek());
+    }
 }
