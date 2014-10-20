@@ -78,9 +78,9 @@ public class InstructionMessage implements Comparable<InstructionMessage>{
      */
     @Override
     public int compareTo(InstructionMessage m) {
-        if (getPriority() > m.getPriority()) //has higher priority, push ahead in queue
+        if (getPriority() > m.getPriority()) //this has higher priority, push ahead in queue
             return -1;
-        else if (getPriority() < m.getPriority()) //has lower priority, push behind in queue
+        else if (getPriority() < m.getPriority()) //this has lower priority, push behind in queue
             return 1;
         else return 0; //has same priority, do nothing
     }
