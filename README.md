@@ -12,7 +12,7 @@ a test-driven approach.
 
 The Instruction Queue:
 
- - [] Supports any number of InstructionMessages
+ - [x] Supports any number of InstructionMessages - by nature of PriorityQueue class
  - [] Prioritises InstructionMessages according to the values below
         
         0 < n < 11 -> High
