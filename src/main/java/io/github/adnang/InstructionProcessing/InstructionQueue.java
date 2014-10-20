@@ -12,13 +12,15 @@ import java.util.Queue;
  */
 public class InstructionQueue {
 
+    private final PriorityQueue<InstructionMessage> queue = new PriorityQueue<>();
+
     /**
      * Gets the instruction queue object (for testing purposes)
      *
      * @return the PriorityQueue object
      */
     public Queue getQueue() {
-        return new PriorityQueue<>();
+        return queue;
     }
 
     /**
@@ -32,5 +34,11 @@ public class InstructionQueue {
      * @param timeStamp
      */
     public void addInstruction(int instructionType, int productCode, int quantity, int uom, int timeStamp) {
+        queue.add(new InstructionMessage(
+                instructionType,
+                productCode,
+                quantity,
+                uom,
+                timeStamp));
     }
 }
