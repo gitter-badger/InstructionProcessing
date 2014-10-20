@@ -58,4 +58,16 @@ public class InstructionQueueTest{
                 VAL_TIME_STAMP
         );
     }
+
+    @Test(expected=InvalidMessageException.class)
+    public void test_addInstruction_with_invalid_quant_throws_inv_msg_exception() throws Exception {
+
+        instructionQueue.addInstruction(
+                VAL_INSTRUCTION_TYPE,
+                VAL_PRODUCT_CODE,
+                INV_QUANTITY,
+                VAL_UOM,
+                VAL_TIME_STAMP
+        );
+    }
 }
