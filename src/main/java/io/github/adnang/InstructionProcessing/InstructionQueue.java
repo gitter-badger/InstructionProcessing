@@ -27,7 +27,8 @@ public class InstructionQueue extends PriorityQueue<InstructionMessage>{
     {
 
         if (instructionType <= 0 || instructionType >= 100) throw new InvalidMessageException();
-        if (productCode <= 0 || quantity <= 0) throw new InvalidMessageException();
+        if (productCode <= 0 || quantity <= 0 || timeStamp <= 0)
+            throw new InvalidMessageException();
         if (uom < 0 || uom >= 256) throw new InvalidMessageException();
 
         add(new InstructionMessage(
