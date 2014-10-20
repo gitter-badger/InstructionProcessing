@@ -1,6 +1,5 @@
 package io.github.adnang.InstructionProcessing;
 
-import jdk.nashorn.internal.ir.annotations.Ignore;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -33,7 +32,7 @@ public class InstructionQueueTest{
                 VAL_UOM,
                 VAL_TIME_STAMP
         );
-        assertEquals(1,instructionQueue.getQueue().size());
+        assertEquals(1,instructionQueue.size());
     }
 
     @Test(expected=InvalidMessageException.class)

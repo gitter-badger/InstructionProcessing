@@ -1,27 +1,16 @@
 package io.github.adnang.InstructionProcessing;
 
 import java.util.PriorityQueue;
-import java.util.Queue;
 
 /**
- * Represents the Instruction Queue. Contains a Priority queue object and a factory method for Instruction Messages.
+ * Represents the Instruction Queue. Extends Priority Queue class for its collection methods, and overrides constructor
+ * to provide the comparator.
  *
  * @author Adnan Gazi
  * @since 20/10/14
  * @version 1.0
  */
-public class InstructionQueue {
-
-    private final PriorityQueue<InstructionMessage> queue = new PriorityQueue<>();
-
-    /**
-     * Gets the instruction queue object (for testing purposes)
-     *
-     * @return the PriorityQueue object
-     */
-    public Queue getQueue() {
-        return queue;
-    }
+public class InstructionQueue extends PriorityQueue<InstructionMessage>{
 
     /**
      * Creates an InstructionMessage object given a set of integers, and places the object in the queue. Throws an
@@ -34,7 +23,7 @@ public class InstructionQueue {
      * @param timeStamp
      */
     public void addInstruction(int instructionType, int productCode, int quantity, int uom, int timeStamp) {
-        queue.add(new InstructionMessage(
+        add(new InstructionMessage(
                 instructionType,
                 productCode,
                 quantity,
