@@ -21,8 +21,9 @@ The Instruction Queue:
     where `n` is the InstructionType attribute.
  
  - [x] Has a method that returns the number of InstructionMessages on it - by nature of Collection class
- - [] Has a method for placing InstructionMessages onto the queue
- - [] Has a method for removing InstructionMessages from the queue
- - [] Has a method for retrieving the InstructionMessage at the front of the queue
- - [] Has a method for determining if the queue is empty
- - [] Throws an InvalidMessageException if an invalid InstructionMessage is placed on it.
+ - [x] Has a method for placing InstructionMessages onto the queue - by nature of Collection class
+ - [x] Has a method for removing InstructionMessages from the queue - by nature of Collection class
+ - [x] Has a method for retrieving the InstructionMessage at the front of the queue - by nature of Collection class
+ - [x] Has a method for determining if the queue is empty - by nature of Collection class
+ - [x] Throws an InvalidMessageException if an invalid InstructionMessage is placed on it - in InstructionMessage
+    constructor
