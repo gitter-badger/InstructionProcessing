@@ -18,7 +18,7 @@ public class InstructionQueueTest{
         VAL_TIME_STAMP = 1000,      INV_TIME_STAMP = -10;
 
     /**
-     * Tests that the addInstruction() method places an InstructionMessage object in the queue given a set of integers
+     * Tests that the overloaded add() method places an InstructionMessage object in the queue given a set of integers
      * as input
      *
      * @throws Exception
@@ -26,14 +26,14 @@ public class InstructionQueueTest{
     @Test
     public void test_addInstruction_creates_queue_entry() throws Exception {
 
-        instructionQueue.addInstruction(
+        instructionQueue.add(
                 VAL_INSTRUCTION_TYPE,
                 VAL_PRODUCT_CODE,
                 VAL_QUANTITY,
                 VAL_UOM,
                 VAL_TIME_STAMP
         );
-        assertEquals(1,instructionQueue.size());
+        assertEquals(1, instructionQueue.size());
     }
 
     /**
@@ -44,7 +44,7 @@ public class InstructionQueueTest{
     @Test(expected=InvalidMessageException.class)
     public void test_addInstruction_with_invalid_type_throws_inv_msg_exception() throws Exception {
 
-        instructionQueue.addInstruction(
+        instructionQueue.add(
                 INV_INSTRUCTION_TYPE,
                 VAL_PRODUCT_CODE,
                 VAL_QUANTITY,
@@ -61,7 +61,7 @@ public class InstructionQueueTest{
     @Test(expected=InvalidMessageException.class)
     public void test_addInstruction_with_invalid_pc_throws_inv_msg_exception() throws Exception {
 
-        instructionQueue.addInstruction(
+        instructionQueue.add(
                 VAL_INSTRUCTION_TYPE,
                 INV_PRODUCT_CODE,
                 VAL_QUANTITY,
@@ -78,7 +78,7 @@ public class InstructionQueueTest{
     @Test(expected=InvalidMessageException.class)
     public void test_addInstruction_with_invalid_quant_throws_inv_msg_exception() throws Exception {
 
-        instructionQueue.addInstruction(
+        instructionQueue.add(
                 VAL_INSTRUCTION_TYPE,
                 VAL_PRODUCT_CODE,
                 INV_QUANTITY,
@@ -95,7 +95,7 @@ public class InstructionQueueTest{
     @Test(expected=InvalidMessageException.class)
     public void test_addInstruction_with_invalid_uom_throws_inv_msg_exception() throws Exception {
 
-        instructionQueue.addInstruction(
+        instructionQueue.add(
                 VAL_INSTRUCTION_TYPE,
                 VAL_PRODUCT_CODE,
                 VAL_QUANTITY,
@@ -112,7 +112,7 @@ public class InstructionQueueTest{
     @Test(expected=InvalidMessageException.class)
     public void test_addInstruction_with_invalid_time_throws_inv_msg_exception() throws Exception {
 
-        instructionQueue.addInstruction(
+        instructionQueue.add(
                 VAL_INSTRUCTION_TYPE,
                 VAL_PRODUCT_CODE,
                 VAL_QUANTITY,

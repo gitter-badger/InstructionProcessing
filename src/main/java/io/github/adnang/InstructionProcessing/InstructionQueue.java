@@ -22,7 +22,7 @@ public class InstructionQueue extends PriorityQueue<InstructionMessage>{
      * @param uom
      * @param timeStamp
      */
-    public void addInstruction(int instructionType, int productCode, int quantity, int uom, int timeStamp)
+    public void add(int instructionType, int productCode, int quantity, int uom, int timeStamp)
             throws InvalidMessageException
     {
         add(new InstructionMessage(
