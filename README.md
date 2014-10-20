@@ -20,7 +20,7 @@ The Instruction Queue:
         90 < n < 100 -> Low
     where `n` is the InstructionType attribute.
  
- - [] Has a method that returns the number of InstructionMessages on it
+ - [x] Has a method that returns the number of InstructionMessages on it - by nature of Collection class
  - [] Has a method for placing InstructionMessages onto the queue
  - [] Has a method for removing InstructionMessages from the queue
  - [] Has a method for retrieving the InstructionMessage at the front of the queue
