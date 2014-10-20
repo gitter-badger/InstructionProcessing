@@ -121,4 +121,24 @@ public class InstructionQueueTest{
         );
     }
 
+    /**
+     * Tests comparator of message queue works by adding a higher priority message after lower priority message and
+     * checking their locations.
+     *
+     * @throws Exception
+     */
+    @Test
+    public void test_higher_priority_message_moves_ahead_of_queue() throws Exception {
+        final int HIGH_PRIORITY_TYPE = 1, LOW_PRIORITY_TYPE = 91;
+        InstructionMessage high = new InstructionMessage(HIGH_PRIORITY_TYPE,
+                VAL_PRODUCT_CODE, VAL_QUANTITY, VAL_UOM, VAL_TIME_STAMP);
+
+        InstructionMessage low = new InstructionMessage(LOW_PRIORITY_TYPE,
+                VAL_PRODUCT_CODE, VAL_QUANTITY, VAL_UOM, VAL_TIME_STAMP);
+
+        instructionQueue.add(low);
+        instructionQueue.add(high);
+
+        assertEquals(high, instructionQueue.peek());
+    }
 }
