@@ -22,7 +22,12 @@ public class InstructionQueue extends PriorityQueue<InstructionMessage>{
      * @param uom
      * @param timeStamp
      */
-    public void addInstruction(int instructionType, int productCode, int quantity, int uom, int timeStamp) {
+    public void addInstruction(int instructionType, int productCode, int quantity, int uom, int timeStamp)
+            throws InvalidMessageException
+    {
+
+        if (instructionType < 0 || instructionType > 100) throw new InvalidMessageException();
+
         add(new InstructionMessage(
                 instructionType,
                 productCode,
