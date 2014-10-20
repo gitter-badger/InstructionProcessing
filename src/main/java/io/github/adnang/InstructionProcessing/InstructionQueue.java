@@ -14,7 +14,7 @@ public class InstructionQueue extends PriorityQueue<InstructionMessage>{
 
     /**
      * Creates an InstructionMessage object given a set of integers, and places the object in the queue. Throws an
-     * InvalidMessageException otherwise.
+     * InvalidMessageException if values are invalid.
      *
      * @param instructionType
      * @param productCode
