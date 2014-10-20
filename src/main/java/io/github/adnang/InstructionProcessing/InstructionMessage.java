@@ -11,6 +11,16 @@ public class InstructionMessage {
             uom,
             timeStamp;
 
+    /**
+     * Validates constructor parameters as determined by spec.
+     *
+     * @param instructionType
+     * @param productCode
+     * @param quantity
+     * @param uom
+     * @param timeStamp
+     * @throws InvalidMessageException
+     */
     public InstructionMessage(int instructionType, int productCode, int quantity, int uom, int timeStamp)
         throws InvalidMessageException
     {
