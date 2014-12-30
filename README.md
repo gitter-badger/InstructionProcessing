@@ -2,6 +2,8 @@
 ## By Adnan Gazi
 ## Created 20/10/2014
 
+[![Gitter](https://badges.gitter.im/Join%20Chat.svg)](https://gitter.im/adnang/InstructionProcessing?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 ## Compiling and Testing
 The code was written and tested in Intellij IDEA 13.1 using Maven 3.2.3 and JUnit 4.11. As such, it should be possible
 to compile and test the code using `mvn compile` and `mvn test` respectively using this version of Maven.
